@@ -1,0 +1,17 @@
+[
+  {
+    "goal": "admin 계정이 로그인에 몇 번 실패했는지 알려 주세요.",
+    "tool": "count_failed_logins",
+    "result": 4
+  },
+  {
+    "goal": "211.45.12.9 는 어느 나라의 주소인지 알려 주세요.",
+    "tool": "lookup_ip",
+    "result": "South Korea / SamsungSDS Inc."
+  },
+  {
+    "goal": "admin 계정이 공격받고 있습니다. 더 이상 로그인하지 못하게 해 주세요.",
+    "tool": "lock_account",
+    "result": "held"
+  }
+]
