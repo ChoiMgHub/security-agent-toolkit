@@ -30,8 +30,6 @@ Python과 보안 관련 내용을 학습하면서 직접 실습한 코드와 결
 security-agent-toolkit/
 ├─ agent_core/
 ├─ docs/
-├─ .env
-├─ .gitignore
 └─ ...
 ```
 
