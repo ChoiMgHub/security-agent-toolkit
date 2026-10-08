@@ -14,7 +14,7 @@ def summarize_batch(batch):                                   # 묶음 하나를
     result = parse_llm_json(text)                             # 답을 딕셔너리로 바꾼다. 못 읽으면 None
     if result is None:                                        # JSON 으로 읽지 못했으면
         return []                                             # 실패하면 빈 리스트 — 다음 묶음은 계속한다
-    return result                                             # 요약 리스트를 돌려준다
+    return result                                             # 요약 리스트를 리턴한다
 
 
 def summarize_events(events):                                 # 경보 전체를 묶음으로 나눠 요약하는 함수
@@ -23,7 +23,7 @@ def summarize_events(events):                                 # 경보 전체를
         # 묶음 하나를 요약해 한 건씩 꺼낸다
         for item in summarize_batch(events[start:start + SIZE]):
             summaries.append(item)                            # 요약 하나를 모은다
-    return summaries                                          # 모은 요약을 돌려준다
+    return summaries                                          # 모은 요약을 리턴한다
 
 
 def sort_by_risk(summaries):                                  # 요약을 high → medium → low 순서로 정렬하는 함수
@@ -32,4 +32,4 @@ def sort_by_risk(summaries):                                  # 요약을 high �
         for s in summaries:                                   # 요약을 하나씩 꺼낸다
             if s["risk_level"].lower() == level:              # 소문자로 맞춰 지금 위험도와 같으면
                 sorted_summaries.append(s)                    # 정렬 결과에 넣는다
-    return sorted_summaries                                   # 정렬한 요약을 돌려준다
+    return sorted_summaries                                   # 정렬한 요약을 리턴한다
