@@ -1,0 +1,2 @@
+https://api.example.com/v1/ip/185.220.101.34?full=true
+https://api.example.com/v1/ip/211.45.12.9?full=true

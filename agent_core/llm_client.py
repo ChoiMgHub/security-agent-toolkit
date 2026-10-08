@@ -14,7 +14,7 @@ def find_env():                                               # .env 를 지금 
         if os.path.exists(path):                              # 그 파일이 있으면
             return path                                       # 찾은 경로를 돌려준다
         folder = os.path.dirname(folder)        # 한 칸 위 폴더
-    return None
+    return None                                               # 못 읽으면 None
 
 
 def read_api_key():                                           # .env 에서 키를 읽어 돌려주는 함수
@@ -45,7 +45,8 @@ def parse_llm_json(text):                                     # LLM 의 답을 �
     clean = text.replace("```json", "")                       # 코드 블록 표시 ```json 을 지운다
     clean = clean.replace("```", "")                          # 남은 ``` 를 지운다
     clean = clean.strip()                                     # 앞뒤 공백 · 줄바꿈을 지운다
+
     try:                                                      # 아래 줄을 해 본다
         return json.loads(clean)                              # 문자열을 딕셔너리로 바꿔 돌려준다
     except json.JSONDecodeError:                              # JSON 으로 읽지 못하면 여기로 온다
-        return None
+        return None                                           # 못 읽으면 None
