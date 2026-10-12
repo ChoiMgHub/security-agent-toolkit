@@ -478,8 +478,8 @@ curl "http://example.com/?q=network_day1"
 ### 문제 7-3 · 보고서 완성하고 올리기
 
 - GitHub `network_zt` 폴더에 보고서가 보이나요?
-  - 기록 상태: **업로드 여부 확인 필요. 오늘의 git push 결과나 GitHub 확인 화면은 아직 이 기록에 없다.**
-  - 보고서 내용을 보완했고 업로드 절차는 정리했다. 실제 전송과 웹 확인을 하지 않은 상태에서 “제출 완료”라고 적지는 않는다.
+  - 확인 결과: 예. GitHub에서 day01_packet_analysis.md를 열어 오늘 작성한 복습 기록과 최종 분석이 반영된 것을 확인했다.
+  - handshake.png도 같은 폴더에서 열리는 것을 확인했다.
 - 이해한 제출 절차:
   1. 보고서와 필요한 이미지를 `network_zt` 안에 저장하고, VS Code에서 변경 내용을 저장한다.
   2. 터미널이 `network_zt`에 있다면 `cd ..`로 `security-agent-toolkit`으로 이동한다.
