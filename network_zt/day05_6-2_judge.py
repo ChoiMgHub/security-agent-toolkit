@@ -31,7 +31,7 @@ for name in LINES:
     delay, jitter, loss = measure(LINES[name])
 
     # 5. 세 기준을 모두 지켰는지 ok 에 담는다. 여기를 직접 씁니다
-    ok = ok = delay <= MAX_DELAY and jitter <= MAX_JITTER and loss <= MAX_LOSS   # 이 줄의 False 를 「세 기준을 모두 지키면 True」가 되는 식으로 바꾼다
+    ok = delay <= MAX_DELAY and jitter <= MAX_JITTER and loss <= MAX_LOSS   # 이 줄의 False 를 「세 기준을 모두 지키면 True」가 되는 식으로 바꾼다
     # 6. 어느 기준에 걸렸는지 모은다 (이미 채워져 있음)
     reasons = []
     if delay > MAX_DELAY:

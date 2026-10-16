@@ -5,11 +5,16 @@ LINES = {
     "회선 C": [40, 41, None, 42, 40, None, 41, 43, None, 40],
 }
 
-def jitter(got):                          # 받은 값 리스트 got 으로 지터를 구해 리턴하는 함수이다. 이 함수를 직접 만든다
+def jitter(got):
+    """받은 응답 시간으로 지터를 계산한다.
+
+    입력: 응답 시간 리스트 got(ms, 2개 이상)
+    리턴: 이웃한 차이의 절댓값을 평균 낸 지터(ms)
+    """
     total = 0
     for i in range(1, len(got)):
         total = total + abs(got[i] - got[i - 1])
-    return total / (len(got) - 1)                     # ← 계산을 만들기 전에 넣어 둔 임시 값이다. 이 줄을 지우고 위 1 ~ 3 을 코드로 쓴다 (4줄 이하)
+    return total / (len(got) - 1)                 
 
 def measure(name, data):                  # 회선 하나의 지연 · 지터 · 손실을 구해 출력하는 함수이다
     got = []                              # 응답을 받은 값만 모을 빈 리스트이다

@@ -29,7 +29,7 @@ def allowed_ports(src, dst, ports):
         action, no = judge(src, dst, port)
         if action == "permit":
             result.append(port)
-    return result                          # ← 이 줄을 지우고 위 1 ~ 6 을 코드로 쓴다 (6줄)
+    return result                          
 
 PORTS = [22, 80, 443, 445, 3389]             # 시험할 포트 다섯 개이다
 print(allowed_ports("outside", "DMZ", PORTS))      # 인터넷 → DMZ 에서 허용되는 포트 목록을 출력한다
