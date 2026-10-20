@@ -17,7 +17,7 @@ PLANS = [("현재", 20, 30), ("A", 50, 30), ("B", 20, 10), ("C", 20, 0)]   # (�
 def score(count, country, threshold, points):                # 한 요청의 점수를 계산해 리턴한다
     total = 0                                                # 점수는 0 에서 시작한다
     # 1. country 가 "KR" 이 아니면(해외) total 에 30 을 더한다   # ←
-    if country != "kr":
+    if country != "KR":
         total = total + 30
     # 2. count 가 threshold 이상이면 total 에 points 를 더한다   # ←
     if count >= threshold:
@@ -44,5 +44,5 @@ for name, threshold, points in PLANS:                        # 안을 하나씩 
         if r["kind"] == "위험" and d != "거부":
             false_negative = false_negative + 1
     # 6. name, "오탐", false_positive, "미탐", false_negative 를 출력한다   # ←
-    print("오탐", false_positive, "미탐", false_negative)
+    print(name, "오탐", false_positive, "미탐", false_negative)
 
