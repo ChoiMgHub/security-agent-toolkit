@@ -1,0 +1,17 @@
+LOG = [
+    (1,  "02:00", "batch-night", "SETTLE", "QUERY"),
+    (3,  "02:14", "seoyeon",     "SETTLE", "QUERY"),
+    (4,  "02:15", "seoyeon",     "SETTLE", "QUERY"),
+    (5,  "02:15", "seoyeon",     "SETTLE", "QUERY"),
+    (7,  "09:05", "junho",       "SETTLE", "QUERY"),
+    (9,  "10:44", "seoyeon",     "SALES",  "QUERY"),
+    (10, "11:30", "junho",       "SETTLE", "QUERY"),
+    (11, "13:15", "seoyeon",     "SALES",  "QUERY"),
+    (12, "13:40", "seoyeon",     "SETTLE", "QUERY"),
+    (13, "14:02", "junho",       "SETTLE", "QUERY"),
+    (14, "14:10", "seoyeon",     "SETTLE", "QUERY"),
+    (15, "14:35", "seoyeon",     "SETTLE", "QUERY"),
+    (16, "15:00", "seoyeon",     "SETTLE", "QUERY"),
+    (17, "15:25", "seoyeon",     "SETTLE", "QUERY"),
+    (18, "16:30", "seoyeon",     "SALES",  "QUERY"),
+]
