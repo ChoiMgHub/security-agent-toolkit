@@ -30,8 +30,7 @@ def to_min(t):                                               # "09:10" 같은 �
 last = {}                                                    # 계정 → (마지막 결정, 그 시각(분))을 기억할 딕셔너리
 deny_reasons = {}                                            # 거부 이유 → 건수를 셀 딕셔너리
 for text in LOG:                                             # 로그 글자를 한 줄씩 꺼낸다
-    line = {"time": "00:00", "user": "-", "device": "-", "decision": "허용", "reason": "-"}   # 1. 임시 값입니다. text 를 json.loads 로 딕셔너리로 바꾼 값으로 바꾼다   # ←
-    line = json.loads(text)    
+    line = json.loads(text)                                  # 1. JSON 문자열을 딕셔너리로 읽는다
     user = line["user"]                                      # 이 줄의 계정
     now = to_min(line["time"])                               # 이 줄의 시각(분)
     # 2. user 가 last 에 있고, last[user][0] 이 "거부" 이고, line["decision"] 이 "허용" 이고, now - last[user][1] 이 10 이하이면 "[거부 후 허용]", user, line["time"], line["device"] 를 출력한다   # ←
@@ -46,4 +45,4 @@ for text in LOG:                                             # 로그 글자를 
 for reason in deny_reasons:                                  # 이유를 하나씩 꺼낸다
     count = deny_reasons[reason]                             # 그 이유의 건수
     # 4. reason, "#" 를 count 만큼 반복한 글자, count 를 출력한다   # ←
-    print(reason, "#" * count, count)  
+    print(reason, "#" * count, count)
