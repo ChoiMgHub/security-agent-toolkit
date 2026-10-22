@@ -186,8 +186,27 @@ ok, reason = evaluate_access("seoyeon", "ACCOUNT", "CHANGE", at("2026-10-22 14:0
 
 ### 마무리 · 오늘 만든 것을 깃허브에 올리기
 
-> 아직 업로드를 진행하지 않아 이번 보고서 작성 범위에서 제외했다. 아래 답란은 실제 진행 후 작성하기 위해 남겨 두었다.
-
 - (가) `git status` 를 쳤을 때 `Untracked files:` 아래 줄이 몇 개였는지, 그 가운데 `.env` · `.venv` 가 있었는지 적어 주세요.
   - 쓸 내용: 줄 수와 `.env` · `.venv` 유무
   - 답:
+
+업로드 전 저장소 최상위에서 `git status`를 실행했을 때 `Untracked files:` 아래에는 **27줄**이 있었고, 그 가운데 **`.env`와 `.venv`는 없었다.** 이와 별도로 이미 추적 중이던 `network_zt/day06_3-2_batch_decide.py` 한 개가 수정된 상태였다. 따라서 미등록 27개와 수정 파일 1개를 구분해서 봐야 한다.
+
+나는 `access_control`에서 `cd ..`로 한 단계 위로 이동했고, `pwd`가 `/c/Users/User/Documents/Aleph_Choi/security-agent-toolkit`인 것을 확인한 뒤 업로드를 진행했다.
+
+```bash
+git add .
+git commit -m "Add access control day 2 role management, exceptions, policy and tests"
+git push
+```
+
+커밋은 `beb4dd1d0ff8b5c9c539854127af3ff429f8bf65`이고, 커밋 출력에는 `28 files changed, 7723 insertions(+), 16 deletions(-)`가 나왔다. `git push`에서도 `9cf3273..beb4dd1 main -> main`으로 원격 반영이 성공한 것을 직접 확인했다. `git add` 때 LF가 CRLF로 바뀔 수 있다는 경고가 있었지만, 이후 커밋과 push는 성공했다.
+
+저장소 최상위에서 `git add .`을 사용해 오늘의 `access_control` 파일 17개뿐 아니라, 이전 `docs`·`network_zt` 자료와 네트워크 코드 수정까지 11개가 함께 반영됐다. 이번 미등록 목록에는 이전에 작성한 자료도 포함돼 있었다. 다음에 오늘 작업만 묶어 올릴 때는 추가할 경로를 지정하는 방법을 사용할 것이다.
+
+업로드 후에는 AI에게 GitHub를 직접 확인해 달라고 요청했다. AI가 원격 `main`과 커밋을 확인하고, 실제 원격 코드를 가져와 실행한 결과를 검수해 줬다. 오늘 오전·오후 보고서가 작성한 내용과 일치하고, 테스트의 `==`를 `=`로 바꾼 수정도 올라가 있음을 확인받았다. 기본 테스트 네 가지는 모두 통과했고, 추가 테스트는 5번 통과 뒤 14번째 줄의 6번에서 실패해 현재 정책과 팀원 제안의 차이가 그대로 재현됐다. 2~5교시 실행 결과도 내가 공유한 출력과 일치했다. 함께 올라간 파일 연결도 PNG도 확인받았다.
+
+- [오늘 실습 업로드 커밋](https://github.com/ChoiMgHub/security-agent-toolkit/commit/beb4dd1d0ff8b5c9c539854127af3ff429f8bf65)
+- [GitHub 접근통제 실습 폴더](https://github.com/ChoiMgHub/security-agent-toolkit/tree/main/access_control)
+
+원격 검수에서 오후 보고서의 마무리만 업로드 전 상태로 남아 있음을 확인받아, 이 답안을 추가했다. 실습 결과물의 최초 업로드와 원격 검수는 끝났고, 마무리 기록을 보완한 이 수정본은 별도로 커밋·push해서 반영할 예정이다.
