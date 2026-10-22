@@ -45,21 +45,20 @@ REQUESTS = [                                                                    
     {"id": 7, "user": "seoyeon", "device": "NB-7741", "health": "ok",  "country": "KR", "hour": 3,  "mfa": False, "count": 35},   # 7번 요청
 ]
 
-counts = {"허용": 0, "추가확인": 0, "거부": 0}               # 결정별 건수를 0 에서 시작해 센다
-reason_counts = {}                                           # 거부 이유별 건수를 담을 빈 딕셔너리
-for req in REQUESTS:                                         # 요청을 하나씩 꺼내 req 에 담는다
-    decision, reasons = decide_settlement(req)               # 결정과 이유 목록을 한 번에 받는다
-    # 1. counts 에서 decision 키의 값을 1 늘린다 (1줄)   # ←
-counts[decision] = counts[decision] + 1
-    # 2. decision 이 "거부" 이면 "[거부]", req["id"], req["user"], reasons 를 출력하고, reasons 의 이유마다 reason_counts[이유] 를 1 늘린다 (4줄: if, 출력, for, 늘리기)   # ←
-if decision == "거부":
-    print("[거부]", req["id"], req["user"], reasons) 
-    for reason in reasons: 
-        reason_counts[reason] = reason_counts.get(reason, 0) + 1
-    # 3. decision 이 "추가확인" 이면 "[추가확인]", req["id"], req["user"], reasons 를 출력한다 (2줄)   # ←
-if decision == "추가확인":
-    print("[추가확인]", req["id"], req["user"], reasons)
+counts = {"허용": 0, "추가확인": 0, "거부": 0}
+reason_counts = {}
 
-print("허용", counts["허용"], "건 / 추가확인", counts["추가확인"], "건 / 거부", counts["거부"], "건")   # 결정별 건수를 한 줄로 출력한다
-print("거부 이유별 건수", reason_counts)                      # 거부 이유별 건수를 출력한다
+for req in REQUESTS:
+    decision, reasons = decide_settlement(req)
+    counts[decision] = counts[decision] + 1
 
+    if decision == "거부":
+        print("[거부]", req["id"], req["user"], reasons)
+        for reason in reasons:
+            reason_counts[reason] = reason_counts.get(reason, 0) + 1
+
+    if decision == "추가확인":
+        print("[추가확인]", req["id"], req["user"], reasons)
+
+print("허용", counts["허용"], "건 / 추가확인", counts["추가확인"], "건 / 거부", counts["거부"], "건")
+print("거부 이유별 건수", reason_counts)
