@@ -114,7 +114,9 @@ SLA 초과 요청 번호: 5
 
 상태별 집계는 요청서의 현재 상태를 한 번씩 세는 것이다. 1번이 접수와 승인을 거쳤더라도 최종 상태가 `granted`이므로 그 상태 한 건으로 집계한다. `counts[status] = counts.get(status, 0) + 1`은 해당 상태의 기존 건수를 가져와 1을 더하고, 처음 나온 상태라면 0부터 시작하는 코드다.
 
-`save_requests`가 반환한 6은 `len(requests)`에서 나온 값이다. 실행 파일이 저장한 JSON을 다시 읽었을 때도 6건이었고, 첫 요청서의 상태는 `granted`였다. 이번 출력으로 다시 읽은 건수와 첫 상태를 확인했으며, 파일 전체 내용이나 한글 표시를 직접 열어 검수한 결과는 아직 대화에 남기지 않았다.
+`save_requests`가 반환한 6은 `len(requests)`에서 나온 값이다. 내가 실행한 파일이 저장한 JSON을 다시 읽었을 때도 6건이었고, 첫 요청서의 상태는 `granted`였다.
+
+업로드 후에는 AI가 GitHub 커밋 `b1ea1a8c7d5de7fd97134413ee51479bb4a74b0f`의 실제 코드와 `requests.json`을 확인하고, 별도 검수 환경에서 5·6교시 실행 파일을 다시 실행했다. 두 실행 결과가 보고서의 출력과 일치했고, 다시 생성한 요청서 6건의 내용도 GitHub에 올린 JSON과 일치했다. 한글 신청 이유와 1번 요청의 `exception_id: 6`도 확인됐다. 이 추가 검수는 AI가 수행한 것이며, 내가 내 PC에서 파일 전체를 직접 대조했다고 기록하지 않는다.
 
 5교시에는 SLA 초과가 1번과 5번이었지만, 6교시에는 5번만 나왔다. 이번 실행에서는 1번이 부여까지 완료돼 `granted`로 바뀌었기 때문이다. 6번은 여전히 검토 중이지만 정확히 4시간이어서 초과 대상이 아니다.
 
@@ -148,6 +150,23 @@ SLA 초과 요청 번호: 5
   - 쓸 내용: 줄 수, `.env` · `.venv` 가 있었는지 없었는지
   - 답:
 
-**아직 확인하지 않음 — GitHub 업로드 전 보고서를 작성하는 단계다.** 현재 대화에는 오늘 실습을 마친 뒤의 `git status` 실행 결과가 없어 `Untracked files:` 아래 줄 수와 `.env`·`.venv` 포함 여부를 확정할 수 없다. 앞서 실행한 `ls` 출력만으로 이 항목을 확인했다고 적지는 않는다.
+저장소 루트인 `security-agent-toolkit`으로 이동해 `git status`를 실행했다. **`Untracked files:` 아래에 표시된 항목은 17줄이었고, 그 목록에 `.env`나 `.venv`는 없었다.** 이 확인은 당시 Git이 보여 준 미추적 목록에 대한 것이며, PC 전체에 해당 파일이나 폴더가 없다는 뜻은 아니다.
 
-업로드 전에 저장소 위치를 확인하고 `git status`를 실행해, 표시된 미추적 항목의 줄 수와 `.env`·`.venv`가 있는지 확인한 뒤 실제 결과로 갱신해야 한다. 현재는 커밋·푸시 완료나 원격 저장소 반영 여부도 이 보고서에 완료로 기록하지 않는다.
+기존에 추적 중인 `access_control/day02_pm_report.md`의 수정 1건은 `Changes not staged for commit:` 아래에 별도로 표시됐다. 따라서 미추적 항목 17건과 기존 파일 수정 1건을 합쳐 이번 커밋에는 총 18개 파일의 변경이 포함됐다.
+
+터미널에서 `git add .` 이후 다음 메시지로 커밋하고 `git push`를 실행했다.
+
+```text
+Add access control day 3 request, approval, grant, SLA and history
+```
+
+생성된 커밋은 `b1ea1a8`이고, 푸시 결과는 다음과 같았다.
+
+```text
+To https://github.com/ChoiMgHub/security-agent-toolkit.git
+   f33a11d..b1ea1a8  main -> main
+```
+
+이후 AI가 실제 원격 `main`에서 전체 커밋 번호 `b1ea1a8c7d5de7fd97134413ee51479bb4a74b0f`와 실습 파일·보고서·저장 데이터를 확인했다. 내가 수행한 터미널 실행·커밋·푸시와 AI가 수행한 원격 검수·재실행 확인을 구분해 기록한다.
+
+검수 과정에서 `network_zt/day03_am_request.md`가 `access_control/day03_am_request.md`와 내용이 같은 중복 사본이라는 점도 확인됐다. 나는 검수 후 PC에서 `network_zt` 쪽 중복 사본을 삭제했다. 원본 학습 자료는 `access_control/day03_am_request.md`에 남긴다. 이 보고서는 최초 업로드 이후 확인된 Git 결과와 검수 내용을 반영한 최종 수정본이다.
