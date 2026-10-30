@@ -141,9 +141,12 @@ dami SALES:QUERY office 2026-10-30T10:00 -> False 퇴사한 계정
   - 쓸 내용: ① 줄 수 ② `.env` · `.venv` 가 있었는지 없었는지
   - 답:
 
-**확인 전 — 이 보고서를 작성하는 시점의 채팅에는 오늘 업로드 전 `git status` 출력이 없다.** 따라서 `Untracked files:` 아래에 실제로 몇 줄이 보였는지와 그 목록에 `.env`·`.venv`가 있었는지는 아직 확인하지 못했다.
+저장소 루트인 `security-agent-toolkit`에서 `pwd`와 `git status`를 실행했다. 위치는 `/c/Users/User/OneDrive/문서/Aleph_Choi/security-agent-toolkit`이었고, `Untracked files:` 아래에는 오늘 만든 파일이 **19줄** 보였다. 그 목록에 **`.env`와 `.venv`는 없었다.**
 
-1. **줄 수:** 확인 전. 오늘 만든 파일의 예상 개수로 대신 적지 않고, 실제 화면에 보이는 줄 수를 확인해 기록해야 한다.
-2. **`.env`·`.venv` 표시 여부:** 확인 전. 이전 날짜의 상태나 `.gitignore` 설정만으로 오늘 목록에도 없었다고 단정하지 않는다.
+파일은 파이썬 코드·실행 파일 11개, 설정 JSON 2개, 실습 안내·보고서 Markdown 4개, 회수 이력·서버 로그 2개로 총 19개였다. 줄 수는 예상 개수가 아니라 실제 `git status`에 표시된 목록을 기준으로 확인했다.
 
-서버를 종료한 뒤 저장소 루트인 `security-agent-toolkit`에서 `git status`를 실행해 이 두 항목을 확인하고 갱신할 예정이다. 현재 공유된 실행 기록에는 서버를 `Ctrl + C`로 종료한 결과와 오늘 자료의 `git add`·`git commit`·`git push` 결과도 없으므로, 종료나 업로드가 완료됐다고 적지 않는다. 실습 실행 완료와 GitHub 업로드 완료는 구분해 기록한다.
+`git add .`에서 나온 `LF will be replaced by CRLF` 문구는 줄바꿈 변환 안내였고, 이후 커밋과 업로드가 성공했다. 실행한 커밋 메시지는 `Add access control day 5 revocation, conditional policy and check server`이며, 커밋 `f8bdb05`에서 **19 files changed, 3556 insertions(+)**가 출력됐다.
+
+`git push` 결과는 `77dafb7..f8bdb05 main -> main`으로, 오늘 자료를 GitHub의 `main`에 올린 것을 확인했다. 이후 AI에게 GitHub 검수를 요청했으며, 별도 검수 환경에서 업로드된 코드와 보고서·로그를 대조한 결과도 안내받았다. 내 PC에서 실행한 수업 결과와 AI의 별도 재실행 검수는 구분한다.
+
+이전의 ‘확인 전’ 답변은 위 업로드 로그를 받은 뒤 갱신했다. 업로드 후 내 PC의 `git status`를 다시 실행한 출력은 아직 공유하지 않았으므로, 작업 폴더가 완전히 깨끗하다는 확인까지 한 것으로 적지는 않는다.
