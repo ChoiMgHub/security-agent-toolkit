@@ -184,5 +184,3 @@ dtype: int64
 오늘 실습 파일을 GitHub에 업로드했다. 업로드 후 AI의 직접 검수를 통해 `ChoiMgHub/security-agent-toolkit` 저장소의 `anomaly_detection` 폴더에 실습 코드, 기준 CSV, 오전·오후 보고서, `alerts.json`이 올라간 것을 확인했다. 검수한 커밋은 [`131dacc7`](https://github.com/ChoiMgHub/security-agent-toolkit/commit/131dacc7cb4929f90f5dfbc0bab4a00646e771b2)이다.
 
 해당 커밋의 저장소 파일 목록에는 `.env`, `.venv`, `__pycache__`, `.pyc`가 포함돼 있지 않았다. 저장소 루트의 `.gitignore`에는 `.env`, `.venv`, `.ipynb_checkpoints`, `__pycache__`가 제외 대상으로 설정돼 있었다.
-
-다만 업로드 당시 내 컴퓨터의 `git status` 출력은 공유하지 않아, 그 화면에 `.env`나 `.venv`가 보였는지와 이를 보고 어떤 조치를 했는지는 확인된 기록이 없다. 따라서 `.gitignore`를 이번에 추가했다거나 추적을 해제했다고 쓰지는 않는다. 터미널의 `(.venv)` 표시는 가상환경 활성화를 나타내며 Git 추적 여부를 알려 주는 것은 아니다.
