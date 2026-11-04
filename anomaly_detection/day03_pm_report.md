@@ -181,6 +181,27 @@ dtype: int64
   - 쓸 내용: ① `.env` · `.venv` 가 보였는지 ② 보였다면 한 조치
   - 답:
 
-오늘 실습 파일을 GitHub에 업로드했다. 업로드 후 AI의 직접 검수를 통해 `ChoiMgHub/security-agent-toolkit` 저장소의 `anomaly_detection` 폴더에 실습 코드, 기준 CSV, 오전·오후 보고서, `alerts.json`이 올라간 것을 확인했다. 검수한 커밋은 [`131dacc7`](https://github.com/ChoiMgHub/security-agent-toolkit/commit/131dacc7cb4929f90f5dfbc0bab4a00646e771b2)이다.
+오늘 실습 파일을 GitHub에 업로드한 뒤, `anomaly_detection` 폴더에서 아래 세 명령을 실행해 상태를 다시 확인했다.
 
-해당 커밋의 저장소 파일 목록에는 `.env`, `.venv`, `__pycache__`, `.pyc`가 포함돼 있지 않았다. 저장소 루트의 `.gitignore`에는 `.env`, `.venv`, `.ipynb_checkpoints`, `__pycache__`가 제외 대상으로 설정돼 있었다.
+`git status`에는 `Your branch is up to date with 'origin/main'.`과 `nothing to commit, working tree clean`이 출력됐다. 확인한 시점에 로컬 `main`은 `origin/main`과 동기화돼 있었고, 추가로 커밋할 변경 사항은 없었다. `.env`나 `.venv`도 변경·미추적 항목으로 표시되지 않았다.
+
+`git ls-files -- .env .venv __pycache__`는 출력이 없었다. 확인한 세 경로가 Git 추적 대상에 포함돼 있지 않다는 뜻이다. `git check-ignore -v`에서는 `.gitignore`의 1행, 2행, 4행 규칙으로 각 항목이 제외되는 것을 확인했다. 이미 제외 설정이 적용돼 있어, 이번 재확인에서는 추가로 제외 설정을 바꾸거나 추적을 해제할 필요가 없었다.
+
+실제 실행 결과는 다음과 같다. 두 번째 명령 뒤에는 출력 없이 다음 프롬프트가 나타났다.
+
+```text
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+$ git ls-files -- .env .venv __pycache__
+
+$ git check-ignore -v .env .venv __pycache__
+.gitignore:1:.env       .env
+.gitignore:2:.venv      .venv
+.gitignore:4:__pycache__        __pycache__
+```
+
+업로드 결과는 AI의 GitHub 직접 검수로도 확인했다. `ChoiMgHub/security-agent-toolkit` 저장소의 `anomaly_detection` 폴더에 실습 코드, 기준 CSV, 오전·오후 보고서, `alerts.json`이 올라가 있었다. 검수한 실습 커밋은 [`131dacc7`](https://github.com/ChoiMgHub/security-agent-toolkit/commit/131dacc7cb4929f90f5dfbc0bab4a00646e771b2)이다. 해당 커밋의 저장소 파일 목록에는 `.env`, `.venv`, `__pycache__`, `.pyc`가 포함돼 있지 않았다.
