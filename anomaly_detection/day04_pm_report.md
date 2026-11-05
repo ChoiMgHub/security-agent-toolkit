@@ -105,4 +105,6 @@ low 198.51.100.90 30 ['경로 스캔']
 
 - (가) `git status` 를 쳤을 때 `.env` 나 `.venv` 가 보였는지, 보였다면 어떻게 했는지 적어 주세요.
   - 쓸 내용: ① `.env` · `.venv` 가 보였는지 ② 보였다면 한 조치
-  - 답: 확인 예정 — 오후의 로그 연결과 위험 점수 프로그램 실행은 마쳤다. 다만 이 보고서 작성에 사용할 이번 마무리의 `git status` 출력과 `.env`·`.venv`의 표시 여부, 표시됐다면 실제로 한 조치는 아직 기록에 없다. 업로드 전에 실제 상태를 확인해 이 항목을 보완해야 한다. `ls`에 폴더가 보이는 것과 Git이 추적하는 것은 다르므로, 폴더 목록만으로 제외 여부를 알 수는 없다. 이번 오후 실습의 GitHub 업로드 완료 여부도 아직 기록하지 않았다.
+  - 답: 저장소 최상위인 `security-agent-toolkit`에서 `git status`를 실행했을 때 `.env`와 `.venv`는 표시되지 않았다. 기존 `.gitignore`에 `.env`·`.venv`·`__pycache__` 제외 규칙이 있었고, 업로드 후 AI의 GitHub 검수에서도 이 파일·폴더가 추적 목록에 없는 것을 확인했다. 이번에 이 항목들을 삭제하거나 `.gitignore`를 추가 수정한 조치는 없었다.
+
+  `git status`에는 수정된 `anomaly_detection/normalized_events.json`과 새로 만든 오전·오후 실습 파일이 나타났다. `git add .` 후 `Add anomaly detection day 4 detections, correlation and risk scores`라는 메시지로 커밋하고 `git push`를 실행했다. 커밋 `c7e9f7c`에 변경 파일 20개가 포함됐고, 원격 `main`으로 올라간 것을 확인했다. 커밋·업로드 출력은 직접 실행한 기록으로 남겼으며, 업로드 후의 작업 폴더 상태까지 확인했다고 덧붙이지 않았다.
