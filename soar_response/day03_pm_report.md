@@ -89,4 +89,4 @@ INC-008 192.0.2.41 : 여러 계정이 함께 쓰는 IP 라서 담당자 승인 �
 
 - (가) `git status` 를 쳤을 때 `.env` 나 `.venv` 가 보였는지, 보였다면 어떻게 했는지 적어 주세요.
   - 쓸 내용: ① `.env` · `.venv` 가 보였는지 ② 보였다면 한 조치
-  - 답:
+  - 답: 저장소 루트에서 실행한 `git status`의 업로드 대상 목록에 `.env`와 `.venv`는 보이지 않았다. 따라서 이 파일들에 대한 별도 제외 조치는 하지 않았다. `git add .` 뒤 `git commit -m "Add SOAR containment, post-checks, rollback and shift report"`로 오늘 파일 24개를 커밋했고, `git push`에서 `4521cc0..17e13ca main -> main`을 확인했다. `LF will be replaced by CRLF`는 줄바꿈 변환 안내였고 커밋과 push는 완료됐다. push 이후의 최종 `git status`는 아직 별도로 확인하지 않았다.
