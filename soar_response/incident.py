@@ -15,21 +15,21 @@ TRANSITIONS = {                                                                 
 }
 
 
-def load_json(path):                                                              # 파일 경로를 받는 함수
+def load_json(path):                                         # 파일 경로를 받는 함수
     """JSON 파일을 읽어 리스트나 딕셔너리로 리턴한다.
     인시던트와 플레이북 등록 파일을 읽을 때 쓴다.
     """
-    with open(path, encoding="utf-8") as file:                                    # 파일을 읽기 모드로 연다
-        data = json.load(file)                                                    # JSON 글자를 파이썬 값으로 바꾼다
-    return data                                                                   # 읽은 값을 리턴한다
+    with open(path, encoding="utf-8") as file:               # 파일을 읽기 모드로 연다
+        data = json.load(file)                               # JSON 글자를 파이썬 값으로 바꾼다
+    return data                                              # 읽은 값을 리턴한다
 
 
-def save_json(data, path):                                                        # 저장할 값과 파일 경로를 받는 함수
+def save_json(data, path):                                   # 저장할 값과 파일 경로를 받는 함수
     """값을 JSON 파일로 저장한다.
     실행 결과 상태와 감사 기록을 남길 때 쓴다.
     """
-    with open(path, "w", encoding="utf-8") as file:                               # 파일을 쓰기 모드로 연다
-        json.dump(data, file, ensure_ascii=False, indent=2)                       # 한글은 그대로, 줄을 나눠 저장한다
+    with open(path, "w", encoding="utf-8") as file:          # 파일을 쓰기 모드로 연다
+        json.dump(data, file, ensure_ascii=False, indent=2)  # 한글은 그대로, 줄을 나눠 저장한다
 
 
 def change_status(incident, new_status):                                          # 인시던트와 바꿀 상태를 받는 함수
@@ -99,4 +99,3 @@ def make_log_entry(incident, playbook, action, result):                         
     now_text = datetime.now().strftime("%H:%M:%S")                                # 지금 시각을 시:분:초 글자로 만든다
     entry = {"time": now_text, "incident": incident["id"], "playbook": playbook["id"], "action": action, "result": result}  # 기록 한 건
     return entry                                                                  # 기록을 리턴한다
-
