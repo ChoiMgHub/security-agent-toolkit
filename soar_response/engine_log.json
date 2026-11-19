@@ -1,0 +1,193 @@
+[
+  {
+    "incident": "INC-401",
+    "entity": "dami",
+    "grade": "high",
+    "playbook": "PB-001",
+    "outcome": "자동 실행",
+    "steps": [
+      {
+        "action": "계정 잠금",
+        "target": "dami",
+        "decision": "자동",
+        "reasons": [
+          "등급 high +2",
+          "합계 2점"
+        ],
+        "executed": true,
+        "before": "잠기지 않음",
+        "after": "잠김",
+        "request": {
+          "id": "INC-401",
+          "incident": "INC-401",
+          "action": "계정 잠금",
+          "target": "dami",
+          "grade": "high",
+          "users_on_ip": 0,
+          "target_count": 1
+        }
+      }
+    ],
+    "ticket": "TCK-1",
+    "error": ""
+  },
+  {
+    "incident": "INC-402",
+    "entity": "hana",
+    "grade": "",
+    "playbook": "없음",
+    "outcome": "실패",
+    "steps": [],
+    "ticket": "",
+    "error": "KeyError: 'grade'"
+  },
+  {
+    "incident": "INC-403",
+    "entity": "198.51.100.45",
+    "grade": "low",
+    "playbook": "PB-003",
+    "outcome": "자동 실행",
+    "steps": [
+      {
+        "action": "IP 차단",
+        "target": "198.51.100.45",
+        "decision": "자동",
+        "reasons": [
+          "등급 low +0",
+          "합계 0점"
+        ],
+        "executed": true,
+        "before": "차단되지 않음",
+        "after": "차단됨",
+        "request": {
+          "id": "INC-403",
+          "incident": "INC-403",
+          "action": "IP 차단",
+          "target": "198.51.100.45",
+          "grade": "low",
+          "users_on_ip": 0,
+          "target_count": 1
+        }
+      }
+    ],
+    "ticket": "TCK-2",
+    "error": ""
+  },
+  {
+    "incident": "INC-404",
+    "entity": "203.0.113.80",
+    "grade": "high",
+    "playbook": "PB-003",
+    "outcome": "차단 금지",
+    "steps": [
+      {
+        "action": "IP 차단",
+        "target": "203.0.113.80",
+        "decision": "차단 금지",
+        "reasons": [
+          "허용 목록 대상"
+        ],
+        "executed": false,
+        "before": "",
+        "after": "",
+        "request": {
+          "id": "INC-404",
+          "incident": "INC-404",
+          "action": "IP 차단",
+          "target": "203.0.113.80",
+          "grade": "high",
+          "users_on_ip": 2,
+          "target_count": 1
+        }
+      }
+    ],
+    "ticket": "TCK-3",
+    "error": ""
+  },
+  {
+    "incident": "INC-405",
+    "entity": "192.0.2.41",
+    "grade": "mid",
+    "playbook": "PB-003",
+    "outcome": "승인 대기",
+    "steps": [
+      {
+        "action": "IP 차단",
+        "target": "192.0.2.41",
+        "decision": "승인 필요",
+        "reasons": [
+          "등급 mid +1",
+          "함께 쓰는 IP +2",
+          "합계 3점"
+        ],
+        "executed": false,
+        "before": "",
+        "after": "",
+        "request": {
+          "id": "INC-405",
+          "incident": "INC-405",
+          "action": "IP 차단",
+          "target": "192.0.2.41",
+          "grade": "mid",
+          "users_on_ip": 2,
+          "target_count": 1
+        }
+      }
+    ],
+    "ticket": "TCK-4",
+    "error": ""
+  },
+  {
+    "incident": "INC-406",
+    "entity": "gaeun",
+    "grade": "high",
+    "playbook": "PB-001",
+    "outcome": "승인 대기",
+    "steps": [
+      {
+        "action": "계정 잠금",
+        "target": "gaeun",
+        "decision": "승인 필요",
+        "reasons": [
+          "등급 high +2",
+          "VIP 계정 +3",
+          "합계 5점"
+        ],
+        "executed": false,
+        "before": "",
+        "after": "",
+        "request": {
+          "id": "INC-406",
+          "incident": "INC-406",
+          "action": "계정 잠금",
+          "target": "gaeun",
+          "grade": "high",
+          "users_on_ip": 0,
+          "target_count": 1
+        }
+      }
+    ],
+    "ticket": "TCK-5",
+    "error": ""
+  },
+  {
+    "incident": "INC-407",
+    "entity": "seoyeon",
+    "grade": "mid",
+    "playbook": "PB-002",
+    "outcome": "조치 없음",
+    "steps": [],
+    "ticket": "TCK-6",
+    "error": ""
+  },
+  {
+    "incident": "INC-408",
+    "entity": "jiwoo",
+    "grade": "mid",
+    "playbook": "없음",
+    "outcome": "조치 없음",
+    "steps": [],
+    "ticket": "TCK-7",
+    "error": ""
+  }
+]

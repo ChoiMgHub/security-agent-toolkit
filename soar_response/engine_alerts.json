@@ -1,0 +1,11 @@
+[
+  {"id": "INC-401", "entity": "dami", "grade": "high", "score": 60, "reasons": ["퇴사한 계정"], "status": "탐지됨"},
+  {"id": "INC-402", "entity": "hana", "score": 40, "reasons": ["업무 시간 밖 로그인"], "status": "탐지됨"},
+  {"id": "INC-403", "entity": "198.51.100.45", "grade": "low", "score": 30, "reasons": ["경로 스캔"], "status": "탐지됨"},
+  {"id": "INC-404", "entity": "203.0.113.80", "grade": "high", "score": 65, "reasons": ["경로 스캔"], "status": "탐지됨"},
+  {"id": "INC-405", "entity": "192.0.2.41", "grade": "mid", "score": 35, "reasons": ["경로 스캔"], "status": "탐지됨"},
+  {"id": "INC-406", "entity": "gaeun", "grade": "high", "score": 60, "reasons": ["퇴사한 계정"], "status": "탐지됨"},
+  {"id": "INC-407", "entity": "seoyeon", "grade": "mid", "score": 45, "reasons": ["대량 다운로드"], "status": "탐지됨"},
+  {"id": "INC-408", "entity": "jiwoo", "grade": "mid", "score": 35, "reasons": ["업무 시간 밖 로그인"], "status": "탐지됨"}
+]
+

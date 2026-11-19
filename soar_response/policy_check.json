@@ -1,0 +1,80 @@
+[
+  {
+    "log": "engine_log.json",
+    "check": "게이트 우회 실행",
+    "result": "PASS",
+    "violations": []
+  },
+  {
+    "log": "engine_log.json",
+    "check": "허용 목록 IP 차단",
+    "result": "PASS",
+    "violations": []
+  },
+  {
+    "log": "engine_log.json",
+    "check": "VIP 계정 잠금",
+    "result": "PASS",
+    "violations": []
+  },
+  {
+    "log": "engine_log.json",
+    "check": "티켓 없는 조치",
+    "result": "PASS",
+    "violations": []
+  },
+  {
+    "log": "risk_engine_log.json",
+    "check": "게이트 우회 실행",
+    "result": "PASS",
+    "violations": []
+  },
+  {
+    "log": "risk_engine_log.json",
+    "check": "허용 목록 IP 차단",
+    "result": "PASS",
+    "violations": []
+  },
+  {
+    "log": "risk_engine_log.json",
+    "check": "VIP 계정 잠금",
+    "result": "PASS",
+    "violations": []
+  },
+  {
+    "log": "risk_engine_log.json",
+    "check": "티켓 없는 조치",
+    "result": "PASS",
+    "violations": []
+  },
+  {
+    "log": "gate_off_log.json",
+    "check": "게이트 우회 실행",
+    "result": "FAIL",
+    "violations": [
+      "INC-404",
+      "INC-405",
+      "INC-406"
+    ]
+  },
+  {
+    "log": "gate_off_log.json",
+    "check": "허용 목록 IP 차단",
+    "result": "FAIL",
+    "violations": [
+      "INC-404"
+    ]
+  },
+  {
+    "log": "gate_off_log.json",
+    "check": "VIP 계정 잠금",
+    "result": "PASS",
+    "violations": []
+  },
+  {
+    "log": "gate_off_log.json",
+    "check": "티켓 없는 조치",
+    "result": "PASS",
+    "violations": []
+  }
+]
